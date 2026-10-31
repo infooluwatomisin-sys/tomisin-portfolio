@@ -299,7 +299,7 @@ startxref
 %%EOF
 
 32 0 obj
-<< /Length 4398 >>
+<< /Length 4515 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -470,7 +470,7 @@ q
 1 0 0 1 51.02362 441.3583 cm
 q
 .164706 .129412 .109804 rg
-BT 1 0 0 1 0 5 Tm /F1 10.5 Tf 15.5 TL (Canva for layout, typography, photo editing and mockups.) Tj T* ET
+BT 1 0 0 1 0 5 Tm /F1 10.5 Tf 15.5 TL (Design: Canva, Adobe Photoshop, Adobe Illustrator, Figma and Adobe Express.) Tj T* (Content: CapCut, Meta Business Suite, Pinterest, plus Freepik or Envato for stock assets.) Tj T* ET
 Q
 Q
 q
@@ -513,5 +513,5 @@ trailer
 /Size 33
  /Prev 1205438 >>
 startxref
-1210768
+1210885
 %%EOF
