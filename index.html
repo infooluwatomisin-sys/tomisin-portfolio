@@ -122,32 +122,10 @@ header.solid{background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-fi
 .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .tags span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--line);border-radius:999px;color:var(--ink);background:var(--paper)}
 
-/* contact */
-.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:88px;align-items:start}
-.contact h2{margin:16px 0 22px}
-.contact .lead{margin-bottom:28px}
-.mail{font-family:var(--serif);font-size:1.5rem;color:var(--purple);border-bottom:1px solid currentColor}
-.paper{position:relative;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:44px 40px 40px}
-.paper::before{content:"";position:absolute;top:-16px;left:40px;width:110px;height:30px;background:color-mix(in srgb,var(--purple2) 55%,transparent);transform:rotate(-2deg)}
-.paper .top{display:flex;justify-content:space-between;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;font-weight:500}
-.field{display:grid;grid-template-columns:44px 1fr;align-items:baseline;gap:6px;padding:14px 0;border-bottom:1px solid var(--line)}
-.field>span{font-size:.72rem;letter-spacing:.14em;color:var(--purple);font-weight:500}
-.field label{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
-.field input,.field textarea{width:100%;background:transparent;border:0;outline:0;font:inherit;font-size:1rem;color:var(--ink);resize:vertical}
-.field textarea{min-height:70px}
-.field input::placeholder,.field textarea::placeholder{color:color-mix(in srgb,var(--muted) 55%,transparent)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.chips input{position:absolute;opacity:0;pointer-events:none}
-.chips label{margin:0;padding:8px 14px;border:1px solid var(--line);border-radius:999px;cursor:pointer;color:var(--ink);transition:.2s}
-.chips input:checked+label{background:var(--purple);border-color:var(--purple);color:var(--on-purple)}
-.chips input:focus-visible+label{outline:2px solid var(--purple);outline-offset:2px}
-.submit{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.submit small{color:var(--muted);font-size:.8rem}
-
 /* footer */
 footer{background:var(--ink);color:var(--bg);padding:84px 0 32px}
 :root[data-theme="dark"] footer{background:var(--bg2);color:var(--ink)}
-.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:64px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:64px}
 .fgrid h4{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;opacity:.6;margin-bottom:18px}
 .fgrid li{list-style:none;margin-bottom:10px;font-size:.95rem}
 .fgrid a:hover{color:var(--blue)}
@@ -172,7 +150,7 @@ dialog::backdrop{background:rgba(18,12,48,.75);backdrop-filter:blur(5px)}
 
 @media (max-width:1040px){
   .grid{grid-template-columns:repeat(2,1fr)}
-  .hero .wrap,.intro .wrap,.about .wrap,.contact .wrap{grid-template-columns:1fr;gap:48px}
+  .hero .wrap,.intro .wrap,.about .wrap{grid-template-columns:1fr;gap:48px}
   .frame{max-width:460px}
   .about .wrap{gap:72px}
   .portrait{max-width:440px}
@@ -190,7 +168,6 @@ dialog::backdrop{background:rgba(18,12,48,.75);backdrop-filter:blur(5px)}
   .grid{grid-template-columns:1fr;gap:44px}
   .intro .two{grid-template-columns:1fr;gap:16px}
   .stats{gap:28px}
-  .paper{padding:36px 22px 28px}
   .fgrid{grid-template-columns:1fr}
   .row{padding:28px 0}.row:hover{padding-left:0;padding-right:0}
   .note{width:190px;right:0;bottom:-48px}
@@ -217,7 +194,7 @@ dialog::backdrop{background:rgba(18,12,48,.75);backdrop-filter:blur(5px)}
   <div class="wrap nav">
     <a href="#top" class="logo">Tomisin</a>
     <nav class="links" id="links" aria-label="Main">
-      <a href="#work">Projects</a><a href="#about">Studio</a><a href="#services">Services</a><a class="btn" href="#contact">Contact</a>
+      <a href="#work">Projects</a><a href="#about">Studio</a><a href="#services">Services</a>
     </nav>
     <div class="actions">
       <button class="iconbtn" id="theme" aria-label="Toggle light and dark mode">
@@ -237,7 +214,6 @@ dialog::backdrop{background:rgba(18,12,48,.75);backdrop-filter:blur(5px)}
       <p>Tomisin designs Instagram systems for brands that want to stand out quietly and stay recognisable, so every post belongs to one visual family.</p>
       <div class="cta">
         <a class="btn" href="#work">View projects <svg class="ic"><use href="#i-right"/></svg></a>
-        <a class="link" href="#contact">Start a conversation</a>
       </div>
     </div>
     <div class="frame" id="frame" aria-hidden="true">
@@ -306,31 +282,6 @@ dialog::backdrop{background:rgba(18,12,48,.75);backdrop-filter:blur(5px)}
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="label">( Contact )</span>
-      <h2>Start a conversation about your <em>brand</em></h2>
-      <p class="lead">Tell me about your brand and what you want to post. I will reply with next steps.</p>
-      <a class="mail" href="mailto:info.oluwatomisin@gmail.com">info.oluwatomisin@gmail.com</a>
-    </div>
-    <form class="paper reveal" id="brief" autocomplete="off">
-      <div class="top"><span>01</span><span>Brief intake</span></div>
-      <div class="field"><span>01)</span><div><label for="f-name">Name</label><input id="f-name" required placeholder="Your name"></div></div>
-      <div class="field"><span>02)</span><div><label for="f-email">Email</label><input id="f-email" type="email" required placeholder="you@brand.com"></div></div>
-      <div class="field"><span>03)</span><div><label>Project type</label>
-        <div class="chips" id="types">
-          <input type="radio" name="t" id="t1" value="Instagram feed" checked><label for="t1">Instagram feed</label>
-          <input type="radio" name="t" id="t2" value="Carousel series"><label for="t2">Carousel series</label>
-          <input type="radio" name="t" id="t3" value="Brand system"><label for="t3">Brand system</label>
-          <input type="radio" name="t" id="t4" value="Other"><label for="t4">Other</label>
-        </div></div></div>
-      <div class="field"><span>04)</span><div><label for="f-time">Timeline</label><input id="f-time" placeholder="e.g. Within 4 weeks"></div></div>
-      <div class="field"><span>05)</span><div><label for="f-msg">Tell me more</label><textarea id="f-msg" placeholder="What are you hoping to create?"></textarea></div></div>
-      <div class="submit"><button class="btn" type="submit">Send brief <svg class="ic"><use href="#i-right"/></svg></button><small>Opens your email app</small></div>
-    </form>
-  </div>
-</section>
 </main>
 
 <footer>
@@ -338,7 +289,6 @@ dialog::backdrop{background:rgba(18,12,48,.75);backdrop-filter:blur(5px)}
     <div class="fgrid">
       <div><a class="logo" href="#top">Tomisin</a><p>Calm feeds, lasting design. Social media design for brands that want to be remembered.</p></div>
       <div><h4>Site index</h4><ul><li><a href="#top">Home</a></li><li><a href="#work">Projects</a></li><li><a href="#about">Studio</a></li><li><a href="#services">Services</a></li></ul></div>
-      <div><h4>Get in touch</h4><ul><li><a href="mailto:info.oluwatomisin@gmail.com">info.oluwatomisin@gmail.com</a></li><li><a href="#contact">Send a brief</a></li></ul></div>
       <div><h4>Focus</h4><ul><li>Instagram feeds</li><li>Carousel design</li><li>Brand systems</li></ul></div>
     </div>
     <div class="mark" aria-hidden="true">Tomisin</div>
@@ -419,15 +369,6 @@ burger.onclick=()=>{const o=links.classList.toggle('open');burger.querySelector(
 links.querySelectorAll('a').forEach(a=>a.onclick=()=>{links.classList.remove('open');burger.querySelector('use').setAttribute('href','#i-menu')});
 const onScroll=()=>hdr.classList.toggle('solid',scrollY>20);onScroll();addEventListener('scroll',onScroll,{passive:true});
 document.getElementById('yr').textContent=new Date().getFullYear();
-
-// brief form -> email
-document.getElementById('brief').addEventListener('submit',e=>{
-  e.preventDefault();
-  const g=id=>document.getElementById(id).value.trim();
-  const type=document.querySelector('input[name=t]:checked').value;
-  const body=`Name: ${g('f-name')}\nEmail: ${g('f-email')}\nProject type: ${type}\nTimeline: ${g('f-time')}\n\n${g('f-msg')}`;
-  location.href='mailto:info.oluwatomisin@gmail.com?subject='+encodeURIComponent('Project enquiry for TOMISIN')+'&body='+encodeURIComponent(body);
-});
 
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
