@@ -51,8 +51,9 @@ h2 em,.big em{font-family:var(--serif);font-weight:400;font-style:italic;letter-
 :root[data-theme="light"] .btn.ghost{background:var(--tint);color:var(--ink)}
 
 /* nav */
-header{position:fixed;inset:14px 0 auto 0;z-index:60;pointer-events:none}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;pointer-events:auto}
+header{position:fixed;inset:0 0 auto 0;z-index:60;padding:12px 0;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+header.solid{background:var(--nav);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{font-weight:800;font-size:1.5rem;letter-spacing:-.02em}
 .logo em{font-family:var(--serif);font-weight:400;color:var(--cream)}
 :root[data-theme="light"] .logo em{color:var(--navy)}
@@ -242,7 +243,7 @@ dialog::backdrop{background:rgba(1,19,31,.8);backdrop-filter:blur(5px)}
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
 </svg>
 
-<header>
+<header id="hdr">
   <div class="wrap nav">
     <a href="#top" class="logo">Tomisin <em>Studio</em></a>
     <nav class="links" id="links" aria-label="Main">
@@ -471,6 +472,7 @@ document.getElementById('theme').onclick=()=>{
 const links=document.getElementById('links'),burger=document.getElementById('burger');
 burger.onclick=()=>{const o=links.classList.toggle('open');burger.querySelector('use').setAttribute('href',o?'#i-x':'#i-menu')};
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');burger.querySelector('use').setAttribute('href','#i-menu')}));
+const hdr=document.getElementById('hdr'),onScroll=()=>hdr.classList.toggle('solid',scrollY>20);onScroll();addEventListener('scroll',onScroll,{passive:true});
 // active nav link
 const navA=[...links.querySelectorAll('a')];
 const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const h='#'+(e.target.id||'top');navA.forEach(a=>a.classList.toggle('on',a.getAttribute('href')===h))}}),{rootMargin:'-45% 0px -50% 0px'});
